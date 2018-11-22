@@ -11,7 +11,7 @@ app.use((req, res, next) => {
     var timeStamp = new Date().toString();
     var log = `${timeStamp} ${req.method} ${req.path} ${req.host}`;
     console.log(log);
-    fs.appendFile('log', log + '\n', (err) => {
+    fs.appendFile('server.log', log + '\n', (err) => {
         if(err) {
             console.log('Unable to append file.');
         }
